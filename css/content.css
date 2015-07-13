@@ -1,0 +1,144 @@
+
+html * { font-size:100.01%;}
+
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:75.00%;
+	color:#003560;
+	}
+
+/* ~~~~~~~~~~~~~~~~~~~~| HEADINGS |~~~~~~~~~~~~~~~~~~~~ */
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	color: #003560;
+	margin: 0 0 0.25em 0;
+	text-align:left;
+	}
+
+h1 { font-size:200%; letter-spacing: 1px; }
+h2 { font-size:175%; letter-spacing: 1px; }
+h3 { font-size:130%; letter-spacing: 1px; }
+h4 { font-size:115%;}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~| BASIC TEXT |~~~~~~~~~~~~~~~~~~~~ */
+
+p { line-height:1.5em; margin:0 0 1em 0; }
+
+strong,b { font-weight:bold; }
+
+em,i { font-style:italic; }
+
+hr.dashed {
+	color:#fff;
+    background:transparent;
+    margin:-1em 0 0.5em 0;
+    padding:0 0 0.25em 0;
+    border:0;
+    border-bottom:1px #eee dashed;
+	}
+
+div {outline: 0 none;}
+
+img {border:none;}
+
+/* ~~~~~~~~~~~~~~~~~~~~| BASIC STUFF // cleanup!!! |~~~~~~~~~~~~~~~~~~~~ */
+
+
+  .highlight { color:#c30; }
+  .dimmed { color:#888; }
+
+  .info { background:#f8f8f8; color:#666; padding:10px; margin-bottom:0.5em; font-size:91.7%; }
+
+  .note { background:#efe; color:#040; border:2px #484 solid; padding:10px; margin-bottom:1em; }
+  .important { background:#ffe; color:#440; border:2px #884 solid; padding:10px; margin-bottom:1em; }
+  .warning { background:#fee; color:#400; border:2px #844 solid; padding:10px; margin-bottom:1em; }
+
+  .float_left { float:left; display:inline; margin-right:1em; margin-bottom:0.15em; }
+  .float_right { float:right; display:inline; margin-left:1em; margin-bottom:0.15em; }
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~| MISC // cleanup |~~~~~~~~~~~~~~~~~~~~ */
+
+#header img.big{
+	position:relative;
+	margin-bottom:-0.25em;
+	z-index:1;
+	}
+
+
+  #uninavi { line-height: 4em;}
+  #uninavi a:link, #uninavi a:visited {
+    color: #5C5C5C;
+    font-size: 0.9em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+  #topnav img.logo {
+    float: right;
+    margin-left: 20px;
+    width: 102px;
+	border:0;
+}
+
+#ueberschrift {padding: 1em 0 0.5em 0;}
+  #ueberschrift h1 {
+	color: #8dae10;
+	padding: 10px 0 10px 10px;
+	text-transform: uppercase;
+	}
+#inhalt{text-align:justify;padding:0;}
+
+#inhalt h2 {
+	border-top: 1px solid #003560;
+    padding: 0.3125em 0 0.625em;
+    }
+
+#inhalt img  {
+	border:none;
+	margin:0;
+	padding:0;
+	box-shadow:none;
+	display:inline;
+	}
+
+	#inhalt img.shadow{display:block; padding: 0px; max-width: 600px; margin: 10px auto 10px auto; box-shadow: 3px 3px 5px #333;}
+
+	#inhalt img.shadowteam {display:block; padding: 0px; max-width: 600px; margin: 0px 0 10px 0; box-shadow: 3px 3px 5px #333;}
+
+  #rechte-spalte{}
+   #rechte-spalte h3{
+	background-color:#E8EFCF;
+	border-top: 2px solid #709108;
+	padding: 5px;
+	font-size:100%;
+	color: #003560;
+	font-weight:bold;
+	letter-spacing:1px;
+}
+
+
+  #footer .subcl, #footer .subc,#footer .subcr {
+	font-size:0.9em;
+	color: #888;
+	padding-left:10px;
+	}
+
+
+
+ /*** Layoutumschaltung  ***/
+
+
+#umschaltung, #sprache {text-align:right;}
+#umschaltung {
+  	padding-right: 10px;
+}
+
+#ansprechpartner, #umschaltung {padding-top:10px;}
