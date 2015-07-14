@@ -38,33 +38,33 @@ catch(PDOException $e) {
 
 
 
-
-
-
-// Alles anzeigen
-if (isset($_POST["all"])) {
+// Archiv
+if (isset($_POST["archiv"])) {
 	try {
-	    $stmt = $db->prepare("SELECT * FROM aktuelles WHERE TO_DAYS(NOW()) - TO_DAYS(datum) <=duration ORDER BY first DESC, datum ASC");
+	    $stmt = $db->prepare("SELECT * FROM aktuelles WHERE datum <= CURRENT_DATE");
 	    $stmt->execute();
 	    $rows = $stmt->fetchAll(PDO::FETCH_OBJ);
 	}
 	catch(PDOException $e) {
     	echo $e->getMessage();
 	}
-}
 
-else {
+	$btn = "<input type='submit' class='form_btn' value='Zurück' name='all'>";
+}
 // Standard
+else {
 	try {
-	    $stmt = $db->prepare("SELECT * FROM aktuelles WHERE TO_DAYS(NOW()) - TO_DAYS(datum) <=duration ORDER BY first DESC, datum ASC LIMIT 3");
+	    $stmt = $db->prepare("SELECT * FROM aktuelles WHERE TO_DAYS(NOW()) - TO_DAYS(datum) <=duration ORDER BY first DESC, datum ASC");
 	    $stmt->execute();
 	    $rows = $stmt->fetchAll(PDO::FETCH_OBJ);
 	}
 	catch(PDOException $e) {
 	    echo $e->getMessage();
 	}
-}
 
+	$btn = "<input type='submit' class='form_btn' value='Archiv ($count_archiv Einträge)' name='archiv'>";
+
+}
 
 include ("header.php");
 include ("navi.php");
@@ -129,6 +129,13 @@ include ("navi.php");
                             <li><a href="sites/forschung/foerderpreis.php">Förderpreis Lehrerausbildung</a></li>
                         </ul>
                     </div>
+	                <div class="angeklickt">
+		                <p>
+						<form action ='index.php' method='POST'>
+							<?=$btn;?>
+						</form>
+		                </p>
+	                </div>
                 </div>
             </div>
         </div>
@@ -137,23 +144,10 @@ include ("navi.php");
             <div id="col3_content" class="clearfix">
                 <div id="inhalt">
                     <h2>Aktuelles</h2>
-					<div class='leftside'>
-						<form action ='index.php' method='POST'>
-							<input type='submit' class='form_btn' value='Alle (<?=$count;?>) Einträge' name='all'>
-						</form>
-					</div>
-					<div class='align_right'>
-						<form action ='index.php' method='POST'>
-							<input type='submit' class='form_btn' value='Zurück' name='limit'>
-						</form>
-					</div>
-					<div class='align_right'>
-						<form action ='index.php' method='POST'>
-							<input type='submit' class='form_btn' value='Archiv (<?=$count_archiv;?> Einträge)' name='archiv'>
-						</form>
-					</div>
+
 
                     <?php
+
                     foreach ($rows as $row) {
 
 	                   echo $row->titel;

@@ -28,9 +28,8 @@ $base = "";
 <!-- ~~~~~~~~~~~~~~~~~~~~| CSS |~~~~~~~~~~~~~~~~~~~~ -->
 <link href="<?= $base;?>css/style.css" rel="stylesheet" type="text/css" />
 <link href="<?= $base;?>css/navigation.css" rel="stylesheet" type="text/css" />
-<link href="<?= $base;?>css/base.css" rel="stylesheet" type="text/css" />
-<link href="<?= $base;?>css/content.css" rel="stylesheet" type="text/css" />
-<link href="<?= $base;?>css/blue/style.css" rel="stylesheet" type="text/css" />
+<!--<link href="<?= $base;?>css/base.css" rel="stylesheet" type="text/css" />-->
+<!--<link href="<?= $base;?>css/content.css" rel="stylesheet" type="text/css" />-->
 <!-- ~~~~~~~~~~~~~~~~~~~~| FONTS |~~~~~~~~~~~~~~~~~~~~ -->
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- ~~~~~~~~~~~~~~~~~~~~| ACTIVE STATUS |~~~~~~~~~~~~~~~~~~~~ -->
@@ -58,7 +57,7 @@ include "includes/functions.php";
 <!-- scrollTop -->
 <a id="top-link"></a>
 <a href="#top-link" class="top_btn"></a>
-<div class="page_margins">
+<div class="wrapper">
 <div class="page">
 <div id="header">
 	<a href="http://www.ruhr-uni-bochum.de">
