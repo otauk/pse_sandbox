@@ -48,58 +48,67 @@
 
 }
 
-/* basics */
 
-.leftside {float:left;}
-.rightside {float:right;}
-.left {float:left;width:60%;text-align:left;}
-.right {float:right;width:35%;text-align:left;}
-.rightright {text-align:right;}
-.clear {clear:both;}
-.center { display:block; text-align:center; margin:0.5em auto; }
-.topspace {padding-top:1em;}
-.nospacetop{margin-top:-1em;}
-.edit {border-bottom:1px dashed red;color:red; }
-.w25{width:25%;}
-.w33{width:30%;}
-.w50{width:50%;}
-.w90{width:90%;}
-.wpx {width:75px;}
-.scale{transform:scale(0.25);}
+/* Farben */
+@c-base: rgb(255,255,255);
+@c-dark: rgb(51,51,51);
+@c-RUBblue: rgb(0,53,96);
+@c-RUBgreen: rgb(141,174,16);
+@c-RUBblueLight: lighten(@c-RUBblue, 10%);
+@c-bg: rgb(100,100,100);
 
 
-.justify {text-align:justify;}
-.align_right {text-align:right;}
-.align_left{text-align:left;}
-.uppercase {text-transform:uppercase;}
-.bigger {font-size:125%;}
-.smaller{font-size:75%;}
-.bolder {font-weight:bold;}
-.italic{font-style:italic;}
-.red {color: #FF0000;}
-.blue {color:rgb(0,53,96);}
-.green {color:rgb(141,174,16);}
-.pse {color: #8dae10;} /* Doppelung mit .green! >> austauschen */
-.fusszeile {font-size:65%;}
-.positive {background:rgba(255,175,0,0.25);}	 /* orange */
-.negative {background:rgba(0,0,125,0.25);}	/* lila */
-.darker{background-color:#cdcdcd;}
+/* layout */
+@bp-large:1200px;
+@bp-small: 992px;
+@bp-mobile: 768px;
+@space-base: 15px;
+@space-large: @space-base*2;
 
 
+/* reset */
 
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 	}
 
-html {
-	font-size:100.01%;
+
+.wrapper {
+	margin:0 auto;
+	max-width: @bp-large;
 	}
+
+.container {
+	padding:0 @space-base;
+}
+
+.header {
+	background-color: #fff;
+	width:@bp-large - @space-large;
+	}
+
+
+.jumbotron {
+	height: 400px;
+	width: 100%;
+	background-color: maroon;
+}
+
+
+.main {
+	width: 100%;
+	background-color: green;
+	padding: 0 @space-base;
+
+}
+
+.footer { clear:both; color:#fff; background-color: @c-dark; min-height: 250px;}
+
 
 body {
-	background: none repeat scroll 0 0 #f1f1f1;
-	overflow-y: scroll;
-	font-size: 100.01%;
+	background: @c-bg;
 	text-align: left;
 	hyphens: auto;
 	-moz-hyphens: auto;
@@ -107,33 +116,12 @@ body {
 	color:#333;
 	}
 
-p { line-height:1.5em; margin:0 0 1em 0; }
-
-
-#header {position:relative;padding: 20px 0 0 0;color: #000;background-color: #fff;background-repeat:repeat-x;}
-
-#topnav { position:absolute; top:0px; right:-30px; text-align:right; color: #aaa; background: transparent; z-index:9999}
-
-#teaser { clear:both; padding: 0 10px; margin: 5px 0; }
-
-#nav {overflow:visible;background-color: #8dae10;min-height: 2.3em;border-bottom: 1px solid #f3f3f3;z-index:999;}
-
-#main { margin: 10px 0; background: #fff; z-index:99;}
-
-#footer { clear:both; color:#ccc; border-top:1px dashed #ccc}
-
-
-
-.wrapper {margin:0 auto; max-width: 1200px;}
-
-.page {border: 0 none;margin: 0 0 0 10px;margin-bottom:10px;box-shadow: 1px 1px 5px #333;}
-
 
 /* HEADINGS */
 h1,h2,h3,h4,h5,h6 {
 	font-family: "rubflama_lightregular";
 	font-weight:normal;
-	color: #003560;
+	color: @c-RUBblue;
 	margin: 0 0 0.25em 0;
 	text-align:left;
 	}
@@ -143,6 +131,103 @@ h2 { font-size:175%; letter-spacing: 1px; }
 h3 { font-size:130%; letter-spacing: 1px; }
 h4 { font-size:115%;}
 
+.headline {padding: 2em @space-base;}
+
+
+p { line-height:1.5em; margin:0 0 1em 0; }
+
+
+/* navi */
+
+nav {
+	margin: 0;
+	background-color: @c-RUBblueLight;
+
+	& ul {
+		padding:0;
+		margin:0;
+		list-style: none;
+		position: relative;
+
+		& li {
+			display:inline-block;
+			background-color: @c-RUBblueLight;
+			&:first-child {
+				padding-left: 15px;
+			}
+		}
+
+	}
+
+	& a {
+		display:block;
+		padding:0 10px;
+		color:@c-base;
+		font-size:15px;
+		line-height: 60px;
+		text-decoration:none;
+		&:hover {
+			background-color: @c-base;
+			color:@c-RUBblueLight;
+			text-decoration: none;
+		}
+	}
+
+	& ul ul {
+		display: none;
+		position: absolute;
+		top: 60px;
+		width:300px;
+		& a {
+			line-height: 40px;
+		}
+	}
+	// display on hover
+	& ul li:hover > ul {
+		display:inherit;
+	}
+	// first
+	& ul ul li {
+		width: auto;
+		float:none;
+		display:list-item;
+		position: relative;
+
+		&:first-child {
+			padding-left: 0px;
+		}
+	}
+	// second, third...
+	& ul ul ul li {
+		position: relative;
+		top:-60px;
+		left:300px;
+	}
+}
+
+/* Change this in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+
+/* misc */
+
+/* aligns */
+.leftside {float:left;}
+.rightside {float:right;}
+.center { display:block; text-align:center; margin:0 auto; }
+.clear {clear:both;}
+
+
+/* font stuff */
+.justify {text-align:justify;}
+.textAlignRight {text-align:right;}
+.textAlignLight {text-align:left;}
+.textTransformUppercase {text-transform:uppercase;}
+.bigger {font-size:125%;}
+.smaller{font-size:75%;}
+.bolder {font-weight:bold;}
+.italic{font-style:italic;}
 
 
 /*

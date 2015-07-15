@@ -1,5 +1,5 @@
 
-<div id="navigation">
+<div class="navigation">
 
 		<!-- AKTUELLES -->
 		<ul>

@@ -1,36 +1,13 @@
 
-html * { font-size:100.01%;}
 
-body {
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:75.00%;
-	color:#003560;
-	}
 
 /* ~~~~~~~~~~~~~~~~~~~~| HEADINGS |~~~~~~~~~~~~~~~~~~~~ */
 
-h1,h2,h3,h4,h5,h6 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight:normal;
-	color: #003560;
-	margin: 0 0 0.25em 0;
-	text-align:left;
-	}
 
-h1 { font-size:200%; letter-spacing: 1px; }
-h2 { font-size:175%; letter-spacing: 1px; }
-h3 { font-size:130%; letter-spacing: 1px; }
-h4 { font-size:115%;}
 
 
 
 /* ~~~~~~~~~~~~~~~~~~~~| BASIC TEXT |~~~~~~~~~~~~~~~~~~~~ */
-
-p { line-height:1.5em; margin:0 0 1em 0; }
-
-strong,b { font-weight:bold; }
-
-em,i { font-style:italic; }
 
 hr.dashed {
 	color:#fff;
@@ -88,12 +65,7 @@ img {border:none;}
 	border:0;
 }
 
-#ueberschrift {padding: 1em 0 0.5em 0;}
-  #ueberschrift h1 {
-	color: #8dae10;
-	padding: 10px 0 10px 10px;
-	text-transform: uppercase;
-	}
+
 #inhalt{text-align:justify;padding:0;}
 
 #inhalt h2 {
