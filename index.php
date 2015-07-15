@@ -85,7 +85,6 @@ $base = "";
     <script async="" type="text/javascript" src="<?=$base;?>inc/scrollTop.js"></script>
     <!-- css -->
     <link href="<?=$base;?>css/style.css" rel="stylesheet" type="text/css">
-    <link href="<?=$base;?>css/navigation.css" rel="stylesheet" type="text/css">
     <!-- fonts -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -160,93 +159,120 @@ $base = "";
             <div class="jumbotron"></div>
 
 
-				<div class="main">
-		                <div>
-		                    <div class="kontakt">
-		                        <h3>Kontakt</h3>
-		                        <?php /*kontakt(school); */?>
-		                    </div>
+			<div class="main">
+                <div>
+                    <div class="kontakt">
+                        <h3>Kontakt</h3>
+                        <?php /*kontakt(school); */?>
+                    </div>
 
-		                    <div class="kontakt">
-		                        <h3>Öffnungszeiten</h3>
+                    <div class="kontakt">
+                        <h3>Öffnungszeiten</h3>
 
-		                        <h4>Sekretariat (SH 1/165)</h4>
+                        <h4>Sekretariat (SH 1/165)</h4>
 
-		                        <p>Mo, Di, Mi von 09.00-11.30 Uhr</p>
-		                        <hr class="dashed">
+                        <p>Mo, Di, Mi von 09.00-11.30 Uhr</p>
+                        <hr class="dashed">
 
-		                        <h4>Praktikumsbüro (SH 1/176)</h4>
+                        <h4>Praktikumsbüro (SH 1/176)</h4>
 
-		                        <p>Di, Mi u. Do von 08.30-11.00 Uhr</p>
-		                        <hr class="dashed">
+                        <p>Di, Mi u. Do von 08.30-11.00 Uhr</p>
+                        <hr class="dashed">
 
-		                        <h4>Zulassung und Zeugnis (SH 1/168)</h4>
+                        <h4>Zulassung und Zeugnis (SH 1/168)</h4>
 
-		                        <p>Pers. Beratung Mi 10.00-12.00 Uhr</p>
-		                    </div>
+                        <p>Pers. Beratung Mi 10.00-12.00 Uhr</p>
+                    </div>
 
-		                    <div class="kontakt" id="beratung">
-		                        <h3>Beratung</h3>
+                    <div class="kontakt" id="beratung">
+                        <h3>Beratung</h3>
 
-		                        <p><a href="mailto:pse-beratung@rub.de">pse-beratung@rub.de</a><br>
-		                        <a href="sites/studium/beratung.php">Weitere Informationen</a></p>
-		                    </div>
+                        <p><a href="mailto:pse-beratung@rub.de">pse-beratung@rub.de</a><br>
+                        <a href="sites/studium/beratung.php">Weitere Informationen</a></p>
+                    </div>
 
-		                    <div class="angeklickt" id="angeklickt">
-		                        <h3>Angeklickt</h3>
+                    <div class="angeklickt" id="angeklickt">
 
-		                        <ul>
-		                            <li><a href="download/2010-08-31_ordnung_pse_amtlich.pdf" target="_blank">Ordnung der PSE</a></li>
+                    </div>
 
-		                            <li><a href="download/antrag_pse_mitgliedschaft.pdf" target="_blank">Mitglied werden</a></li>
-
-		                            <li><a href="download/Protokoll_MV_17.12.13.pdf" target="_blank">Protokoll Mitgliederversammlung</a></li>
-
-		                            <li><a href="http://lists.ruhr-uni-bochum.de/mailman/listinfo/pse-news" class=" icon-link" target="_blank">Newsletter bestellen</a></li>
-
-		                            <li><a href="download/schoolnewsnr915.pdf" target="_blank">Schoolnews Nr. 9</a></li>
-
-		                            <li><a href="download/pseflyer2013.pdf" target="_blank">Infoflyer PSE</a></li>
-
-		                            <li><a href="download/Gestuftes_Lehramtsstudium_RUB_2014_15.pdf" target="_blank">Informationsbroschüre</a></li>
-
-		                            <li><a href="sites/studium/divormed.php">Vorlesungsverzeichnis</a></li>
-
-		                            <li><a href="sites/forschung/foerderpreis.php">Förderpreis Lehrerausbildung</a></li>
-		                        </ul>
-		                    </div>
-
-		                    <div class="angeklickt">
-		                        <form action='index.php' method='post'>
-		                            <?=$btn;?>
-		                            </form>
-		                    </div>
-						</div>
-
-	                    <div id="col3">
-	                        <div id="col3_content" class="clearfix">
-	                            <div id="inhalt">
-	                                <h2>Aktuelles</h2><?php
-
-	                                                    foreach ($rows as $row) {
-
-	                                                       echo $row->titel;
-	                                                    }
-	                                                    ?>
-	                            </div>
-	                        </div>
-	                    </div>
-
-				<div class="footer">
-					<div class="subcolumns fusszeile">
-						<div class="center">
-	                <?php
-	                	$filename = $_SERVER['SCRIPT_FILENAME'];
-	                    echo "Letzte Änderung: ".date ("d.m.Y", filemtime($filename))." um ".date ("H:i", filemtime($filename)). " Uhr";
-	                ?> | <a href="mailto:pse-support@rub.de">Helpdesk</a> | <span id="druckversion"><a onclick="javascript:self.print(); return false;" title="Diese Seite drucken">Drucken</a></span> | <a href="http://www.ruhr-uni-bochum.de/impressum.htm" target="_blank">Impressum</a>
-						</div>
-	        		</div>
+                    <div class="angeklickt">
+                        <form action='index.php' method='post'>
+                            <?=$btn;?>
+                            </form>
+                    </div>
 				</div>
+
+                <div id="col3">
+                    <div id="col3_content" class="clearfix">
+                        <div id="inhalt">
+                            <h2>Aktuelles</h2><?php
+
+                                                foreach ($rows as $row) {
+
+                                                   echo $row->titel;
+                                                }
+                                                ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+	            <div class="col-l-4">
+		        	<h3>Professional School of Education	</h3>
+					Geschäftsstelle	<br/>
+					Gebäude SH 1/165<br/>
+					Universitätsstr. 150<br/>
+					D-44801 Bochum	<br/>
+					Tel 0234 32-11991	<br/>
+					Fax 0234 32-14647	<br/>
+					pse@rub.de
+	            </div>
+	            <div class="col-l-4">
+		            <h3>Öffnungszeiten</h3>
+		            Sekretariat (SH 1/165)<br/>
+					Mo, Di, Mi von 09.00-11.30 Uhr
+					<hr/>
+					Sekretariat (SH 1/165)<br/>
+					Mo, Di, Mi von 09.00-11.30 Uhr
+					<hr/>
+					Sekretariat (SH 1/165)<br/>
+					Mo, Di, Mi von 09.00-11.30 Uhr
+
+	            </div>
+	            <div class="col-l-4">
+		                                    <h3>Angeklickt</h3>
+
+                        <ul>
+                            <li><a href="download/2010-08-31_ordnung_pse_amtlich.pdf" target="_blank">Ordnung der PSE</a></li>
+
+                            <li><a href="download/antrag_pse_mitgliedschaft.pdf" target="_blank">Mitglied werden</a></li>
+
+                            <li><a href="download/Protokoll_MV_17.12.13.pdf" target="_blank">Protokoll Mitgliederversammlung</a></li>
+
+                            <li><a href="http://lists.ruhr-uni-bochum.de/mailman/listinfo/pse-news" class=" icon-link" target="_blank">Newsletter bestellen</a></li>
+
+                            <li><a href="download/schoolnewsnr915.pdf" target="_blank">Schoolnews Nr. 9</a></li>
+
+                            <li><a href="download/pseflyer2013.pdf" target="_blank">Infoflyer PSE</a></li>
+
+                            <li><a href="download/Gestuftes_Lehramtsstudium_RUB_2014_15.pdf" target="_blank">Informationsbroschüre</a></li>
+
+                            <li><a href="sites/studium/divormed.php">Vorlesungsverzeichnis</a></li>
+
+                            <li><a href="sites/forschung/foerderpreis.php">Förderpreis Lehrerausbildung</a></li>
+                        </ul>
+	            </div>
+	            <div class="col-l-4">
+		            <h3>Rest</h3>
+	            </div>
+			</div>
+            <div class="bottomLine">
+	            <?php
+	                	$filename = $_SERVER['SCRIPT_FILENAME'];
+	                    echo "Stand: ".date ("d.m.Y", filemtime($filename))." um ".date ("H:i", filemtime($filename)). " Uhr";
+	                ?>
+	             <a href="mailto:pse-support@rub.de">Helpdesk</a> | <span id="druckversion"><a onclick="javascript:self.print(); return false;" title="Diese Seite drucken">Drucken</a></span> | <a href="http://www.ruhr-uni-bochum.de/impressum.htm" target="_blank">Impressum</a>
+
             </div>
         </div>
     </div>

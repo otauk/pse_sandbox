@@ -45,8 +45,11 @@
          url('../fonts/rubflama-bold-webfont.svg#rubflamabold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
+
+@fs-base: 100%;
+@fs-bigger: 125%;
+@fs-smaller: 85%;
 
 
 /* Farben */
@@ -64,6 +67,8 @@
 @bp-mobile: 768px;
 @space-base: 15px;
 @space-large: @space-base*2;
+
+
 
 
 /* reset */
@@ -85,7 +90,7 @@
 }
 
 .header {
-	background-color: #fff;
+	background: @c-base;
 	width:@bp-large - @space-large;
 	}
 
@@ -93,18 +98,46 @@
 .jumbotron {
 	height: 400px;
 	width: 100%;
-	background-color: maroon;
+	background: url(../img/header.jpg);
+	background-size: cover;
 }
 
 
 .main {
 	width: 100%;
-	background-color: green;
+	background-color: @c-base;
 	padding: 0 @space-base;
 
 }
 
-.footer { clear:both; color:#fff; background-color: @c-dark; min-height: 250px;}
+.footer {
+	color:#fff;
+	background-color: @c-dark;
+	min-height: 250px;
+	font-size: @fs-smaller;
+	line-height: @space-base*1.5;
+
+	& .col-l-4 {
+		width: 25%;
+		text-align: left;
+		padding: @space-base;
+		float:left;
+	}
+
+	& h3 {
+		color:#fff;
+		letter-spacing: 0;
+	}
+
+	&a {
+		color: #fff;
+	}
+}
+
+.bottomLine {
+	text-align: center;
+	padding: @space-base 0;
+}
 
 
 body {
@@ -114,6 +147,7 @@ body {
 	-moz-hyphens: auto;
 	font-family:Arial, Helvetica, sans-serif;
 	color:#333;
+	font-size: 1em;
 	}
 
 
@@ -236,7 +270,7 @@ li > a:only-child:after { content: ''; }
 *	**************************************************
 */
 
-a {color:#0058ad;background:transparent;text-decoration:none;}
+a {color:@c-RUBblueLight;text-decoration:none;}
 
 a:hover, a:active, a:focus {color: #003560;text-decoration: underline;}
 
@@ -247,10 +281,6 @@ a:hover, a:active, a:focus {color: #003560;text-decoration: underline;}
 	content:"\f1c1";
 	padding-right: 0.5em;
 	}
-
-/*a.reset {color:#ffa000;}
-
-a.send {color:#8dae10;}*/
 
 #footer, #footer a {color: #888;}
 
